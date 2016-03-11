@@ -1,0 +1,1 @@
+textformat.vba: call delete('/home/andy/.config/nvim/autoload/textformat.vim')|call delete('/home/andy/.config/nvim/doc/textformat.txt')|call delete('/home/andy/.config/nvim/plugin/textformat.vim')
