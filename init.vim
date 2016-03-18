@@ -1,33 +1,25 @@
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable
 
 colorscheme apprentice
-<<<<<<< HEAD
 
 "set background=dark
 "set nowrap
 "set number
 
-=======
-"set background=dark
-"set nowrap
-"set number
->>>>>>> d6c549719fd935df5e674d9a9855979484eae34c
 set ai
 set autochdir
+set autoread
 set expandtab
 set foldlevel=99
 set foldmethod=indent
 set lazyredraw
 set mat=1
-<<<<<<< HEAD
 set scrolloff=4
-=======
->>>>>>> d6c549719fd935df5e674d9a9855979484eae34c
 set shiftwidth=4
 set showmatch
 set showmatch
 set si
-<<<<<<< HEAD
 set sidescroll=3
 set sidescrolloff=4
 set smarttab
@@ -35,15 +27,10 @@ set softtabstop=4
 set statusline+=
 set statusline=
 set tabstop=8
-=======
-set sidescroll=1
-set sidescrolloff=4
-set smarttab
-set statusline=
-set statusline+=
-set tabstop=4
->>>>>>> d6c549719fd935df5e674d9a9855979484eae34c
+set textwidth=80
 
+highlight OverLength ctermbg=red guibg=ColorColumn
+match OverLength /\%81v.\+/
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
