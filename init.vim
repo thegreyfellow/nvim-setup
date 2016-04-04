@@ -27,22 +27,23 @@ set softtabstop=4
 set statusline+=
 set statusline=
 set tabstop=8
-set textwidth=80
+"set textwidth=80
 
 highlight OverLength ctermbg=red guibg=ColorColumn
 match OverLength /\%81v.\+/
+let NERDTreeToggle=0
+let NERDTreeWinSize=38
+let g:deoplete#enable_at_startup = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 2
+let g:indent_guides_start_level = 2
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-" let g:syntastic_html_checkers = ['w3']
-let g:syntastic_css_checkers = ['csslint']
-let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_check_on_wq = 0
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 2
-let NERDTreeToggle=0
-let NERDTreeWinSize=38
+let g:syntastic_css_checkers = ['csslint']
+let g:syntastic_html_checkers = ['w3']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:tex_flavour = "context"
 let loaded_matchparen=1
 
@@ -52,6 +53,15 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#272727
 
 filetype plugin on
 filetype indent on
+
+
+" Setting up OmniComplete for various filetypes
+autocmd FileType javascript, html setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css, html setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+set ofu=syntaxcomplete#Complete
+
 
 call plug#begin('~/.nvim/plugged')
 Plug 'digitaltoad/vim-pug'
@@ -63,6 +73,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'peterhoeg/vim-qml'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
+"Plug 'valloric/youcompleteme'
+Plug 'shougo/deoplete.nvim' 
 call plug#end()
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
