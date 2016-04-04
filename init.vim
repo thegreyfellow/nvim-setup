@@ -28,15 +28,19 @@ set statusline+=
 set statusline=
 set tabstop=8
 "set textwidth=80
+set completeopt+=noinsert
+set completeopt+=noselect
 
 highlight OverLength ctermbg=red guibg=ColorColumn
 match OverLength /\%81v.\+/
 let NERDTreeToggle=0
 let NERDTreeWinSize=38
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#align_class = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 2
 let g:indent_guides_start_level = 2
+let g:python3_host_skip_check = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -45,6 +49,8 @@ let g:syntastic_css_checkers = ['csslint']
 let g:syntastic_html_checkers = ['w3']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:tex_flavour = "context"
+let g:tern_request_timeout = 1
+let g:tern_show_signature_in_pum = 0
 let loaded_matchparen=1
 
 " Indent guide colors for \ig
@@ -56,9 +62,9 @@ filetype indent on
 
 
 " Setting up OmniComplete for various filetypes
-autocmd FileType javascript, html setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css, html setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 set ofu=syntaxcomplete#Complete
 
@@ -75,6 +81,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 "Plug 'valloric/youcompleteme'
 Plug 'shougo/deoplete.nvim' 
+Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'carlitux/deoplete-ternjs'
 call plug#end()
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
