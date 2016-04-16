@@ -36,11 +36,20 @@ match OverLength /\%81v.\+/
 
 let NERDTreeToggle=0
 let NERDTreeWinSize=34
+let loaded_matchparen=1
+let g:ackprg = 'ag --vimgrep'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:deoplete#auto_complete_start_length = 1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#align_class = 1
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_guide_size = 2
 let g:indent_guides_start_level = 2
+let g:neomake_css_enabled_makers = ['csslint']
+let g:neomake_html_enabled_makers = ['w3']
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_open_list = 2
 let g:python3_host_skip_check = 1
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
@@ -49,17 +58,9 @@ let g:python3_host_skip_check = 1
 "let g:syntastic_css_checkers = ['csslint']
 "let g:syntastic_html_checkers = ['w3']
 "let g:syntastic_javascript_checkers = ['eslint']
-let g:tex_flavour = "context"
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#tab_nr_type = 1
-let loaded_matchparen=1
-let g:deoplete#auto_complete_start_length = 1
-let g:neomake_open_list = 2
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_css_enabled_makers = ['csslint']
-let g:neomake_html_enabled_makers = ['w3']
+let g:tex_flavour = "context"
 
 
 " Indent guide colors for \ig
@@ -77,23 +78,23 @@ augroup omnifuncs
     autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType css        setlocal omnifunc=csscomplete#CompleteCSS
     autocmd FileType python     setlocal omnifunc=pythoncomplete#Complete
-    autocmd BufWritePost,BufEnter    * Neomake
-    autocmd InsertChange,TextChanged * Neomake
+    autocmd BufWritePost,BufEnter    * update | Neomake
 augroup end
 set ofu=syntaxcomplete#Complete
 
 
 call plug#begin('~/.nvim/plugged')
+Plug 'rking/ag.vim'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'zchee/deoplete-jedi'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'shougo/deoplete.nvim'
 Plug 'fidian/hexmode'
 Plug 'ervandew/matchem'
+Plug 'benekastah/neomake'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ervandew/supertab'
 "Plug 'scrooloose/syntastic'
-Plug 'benekastah/neomake'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
 Plug 'nathanaelkane/vim-indent-guides'
