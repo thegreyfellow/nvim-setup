@@ -99,17 +99,16 @@ augroup pencil
     autocmd FileType tex      call pencil#init()
 augroup END
 "   Vim-Lexical *** shit's mostly broken right now
-"let g:lexical#dictionary    = ['/usr/share/dict/words']
-"let g:lexical#spell         = 1
-"let g:lexical#spellfile     = ['~/.config/nvim/spell/en.utf-8.spl']
-"let g:lexical#thesaurus     = ['~/.config/nvim/thesaurus/MobyThesaurus.txt']
-"let g:lexical#thesaurus_key = '<leader>T'
-"augroup lexical
-"    autocmd!
-"    autocmd FileType markdown call lexical#init()
-"    autocmd FileType text     call lexical#init()
-"    autocmd FileType tex      call lexical#init()
-"augroup END
+let g:lexical#dictionary    = ['/usr/share/dict/words']
+let g:lexical#spell         = 1
+let g:lexical#thesaurus     = ['~/.config/nvim/thesaurus/MobyThesaurus.txt']
+let g:lexical#thesaurus_key = '<leader>T'
+augroup lexical
+    autocmd!
+    autocmd FileType markdown call lexical#init()
+    autocmd FileType text     call lexical#init()
+    autocmd FileType tex      call lexical#init()
+augroup END
 "   Vim-Litecorrect
 augroup litecorrect
     autocmd!
