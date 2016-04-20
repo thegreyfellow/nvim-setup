@@ -98,7 +98,7 @@ augroup pencil
     autocmd FileType text     call pencil#init()
     autocmd FileType tex      call pencil#init()
 augroup END
-"   Vim-Lexical *** shit's mostly broken right now
+"   Vim-Lexical
 let g:lexical#dictionary    = ['/usr/share/dict/words']
 let g:lexical#spell         = 1
 let g:lexical#thesaurus     = ['~/.config/nvim/thesaurus/MobyThesaurus.txt']
