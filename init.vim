@@ -1,37 +1,38 @@
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable
+filetype plugin on
+filetype indent on
+highlight OverLength ctermbg=red guibg=ColorColumn
+match OverLength /\%81v.\+/
+
 
 colorscheme molokai 
 
+
+"set textwidth=80
 set background=dark
 set nowrap
-"set number
-
 set ai
 set autochdir
 set autoread
+set completeopt+=noinsert
+set completeopt+=noselect
 set expandtab
 set foldlevel=99
 set foldmethod=indent
 set laststatus=2
 set lazyredraw
 set mat=1
-set scrolloff=4
+set scrolloff=12
 set shiftwidth=4
 set showmatch
 set si
 set sidescroll=3
-set sidescrolloff=4
+set sidescrolloff=10
 set smarttab
 set softtabstop=4
+set nospell
 set tabstop=8
-"set textwidth=80
-set completeopt+=noinsert
-set completeopt+=noselect
-
-
-highlight OverLength ctermbg=red guibg=ColorColumn
-match OverLength /\%81v.\+/
 
 
 let NERDTreeToggle=0
@@ -63,12 +64,60 @@ let g:tern_show_signature_in_pum = 0
 let g:tex_flavour = "context"
 
 
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Start NERDTree in side-tab 
+nnoremap <leader>nt :NERDTreeToggle<CR>
+
+" Custom "vim" style tab navigation shortcuts
+nnoremap td :tabclose<CR>
+nnoremap tl :tabnext<CR>
+nnoremap tj :tablast<CR>
+nnoremap tk :tabfirst<CR>
+nnoremap th :tabprev<CR>
+nnoremap tm :tabm<Space>
+nnoremap tn :tabnew<CR>
+nnoremap tt :tabedit<Space>
+
 " Indent guide colors for \ig
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#252525
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#272727
 
-filetype plugin on
-filetype indent on
+"Setup for Prose Writing, and configuration
+"   Vim-Pencil
+let g:airline_section_x = '%{PencilMode()}'
+let g:pencil#mode_indicators = {'hard': '␍', 'auto': 'ª', 'soft': '⤸', 'off': '',}
+let g:pencil#wrapModeDefault = 'hard'
+let g:pencil#textwidth = 74
+augroup pencil
+    autocmd!
+    autocmd FileType markdown call pencil#init()
+    autocmd FileType text     call pencil#init()
+    autocmd FileType tex      call pencil#init()
+augroup END
+"   Vim-Lexical *** shit's mostly broken right now
+"let g:lexical#dictionary    = ['/usr/share/dict/words']
+"let g:lexical#spell         = 1
+"let g:lexical#spellfile     = ['~/.config/nvim/spell/en.utf-8.spl']
+"let g:lexical#thesaurus     = ['~/.config/nvim/thesaurus/MobyThesaurus.txt']
+"let g:lexical#thesaurus_key = '<leader>T'
+"augroup lexical
+"    autocmd!
+"    autocmd FileType markdown call lexical#init()
+"    autocmd FileType text     call lexical#init()
+"    autocmd FileType tex      call lexical#init()
+"augroup END
+"   Vim-Litecorrect
+augroup litecorrect
+    autocmd!
+    autocmd FileType markdown call litecorrect#init()
+    autocmd FileType text     call litecorrect#init()
+    autocmd FileType tex      call litecorrect#init()
+augroup END
+"   Goyo.vim
 
 
 "Setting up OmniComplete for various filetypes, and Neomake
@@ -82,44 +131,31 @@ augroup omnifuncs
 augroup end
 set ofu=syntaxcomplete#Complete
 
-
+"All extension packages for NeoVim through junegunn's Plug
 call plug#begin('~/.nvim/plugged')
-Plug 'rking/ag.vim'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'zchee/deoplete-jedi'
-Plug 'carlitux/deoplete-ternjs'
-Plug 'shougo/deoplete.nvim'
-Plug 'fidian/hexmode'
-Plug 'ervandew/matchem'
-Plug 'benekastah/neomake'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'ervandew/supertab'
 "Plug 'scrooloose/syntastic'
-Plug 'vim-airline/vim-airline'
+Plug 'benekastah/neomake'
+Plug 'carlitux/deoplete-ternjs'
+Plug 'digitaltoad/vim-pug'
+Plug 'ervandew/matchem'
+Plug 'ervandew/supertab'
+Plug 'fidian/hexmode'
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'digitaltoad/vim-pug'
 Plug 'peterhoeg/vim-qml'
+Plug 'reedes/vim-lexical'
+Plug 'reedes/vim-litecorrect'
+Plug 'reedes/vim-pencil'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'shougo/deoplete.nvim'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-jedi'
 call plug#end()
 
-
-" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <Enter> <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-" Start NERDTree in side-tab 
-nnoremap <leader>nt :NERDTreeToggle<CR>
-
-" Custom "vim" style tab navigation shortcuts
-nnoremap td :tabclose<CR>
-nnoremap tl :tabnext<CR>
-nnoremap tj :tablast<CR>
-nnoremap tk :tabfirst<CR>
-nnoremap th :tabprev<CR>
-nnoremap tm :tabm<Space>
-nnoremap tn :tabnew<CR>
-nnoremap tt :tabedit<Space>
 
 
 " ============================================================================
