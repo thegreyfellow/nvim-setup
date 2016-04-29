@@ -35,8 +35,8 @@ functionality:
 $ sudo apt install xsel 
 ```
 
-which provides copy with `"+y`, and paste with the mouse or `Ctrl
-+ v`, to move content between programs like any gui app.
+which provides copy with `"+y`, and paste with the mouse or `Ctrl+v`, to
+move content between programs like any gui app.
 
 For best use with JavaScript/ES5+, install NodeJS (with nvm or other
 appropriate tool) and use `npm` to install `ternjs` and `eslint` globally.
