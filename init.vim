@@ -36,7 +36,7 @@ set tabstop=8
 
 
 let NERDTreeToggle=0
-let NERDTreeWinSize=34
+let NERDTreeWinSize=26
 let loaded_matchparen=1
 let g:ackprg = 'ag --vimgrep'
 let g:airline#extensions#tabline#enabled = 1
@@ -122,9 +122,10 @@ augroup END
 "Setting up OmniComplete for various filetypes, and Neomake
 augroup omnifuncs
     autocmd!
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType c          setlocal omnifunc=ccomplete#Complete
     autocmd FileType css        setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType python     setlocal omnifunc=pythoncomplete#Complete
     autocmd BufWritePost,BufEnter    * update | Neomake
 augroup end
