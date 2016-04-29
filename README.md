@@ -4,26 +4,26 @@ Standard NeoVim install on Ubuntu 16.04, via this ppa:
 https://launchpad.net/~neovim-ppa
 
 This `rc` setup includes the following packages:
-- vim-litecorrect
-- vim-lexical
-- vim-pencil 
-- hexmode
-- deoplete-ternjs
-- vim-qml
+- ag.vim
 - deoplete-go
-- deoplete.nvim
-- nerdtree
-- goyo.vim
-- matchem
 - deoplete-jedi
-- supertab
-- vim-surround
+- deoplete-ternjs
+- deoplete.nvim
+- goyo.vim
+- hexmode
+- matchem
 - neomake
-- vim-indent-guides
-- vim-pug
+- nerdtree
+- supertab
 - vim-airline
 - vim-easy-align
-- ag.vim
+- vim-indent-guides
+- vim-lexical
+- vim-litecorrect
+- vim-pencil 
+- vim-pug
+- vim-qml
+- vim-surround
 
 Location for files is `~/.config/nvim/` , with `~/.config/nvim/init.vim`
 replacing the conventional `~/.vimrc`
