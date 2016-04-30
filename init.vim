@@ -127,7 +127,7 @@ augroup omnifuncs
     autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType python     setlocal omnifunc=pythoncomplete#Complete
-    autocmd BufWritePost,BufEnter    * update | Neomake
+    autocmd BufWritePost * update | Neomake
 augroup end
 set ofu=syntaxcomplete#Complete
 
