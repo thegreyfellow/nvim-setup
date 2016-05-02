@@ -3,7 +3,26 @@
 Standard NeoVim install on Ubuntu 16.04, via this ppa:
 https://launchpad.net/~neovim-ppa
 
-This `rc` setup includes the following packages:
+Location for files is `~/.config/nvim/` , with `~/.config/nvim/init.vim`
+replacing the conventional `~/.vimrc`
+
+Also included are resources to make a desktop launcher, complete with
+a scaled version of the icon. Move the `.desktop` files to: 
+
+``` 
+$ ~/.local/share/applications/
+```
+
+...and move the `.png` icon to:
+
+```
+$ ~/.local/share/icons/ 
+```
+
+... then set your preferences for opening files accordingly, search for
+NeoVim and add the program to the launcher.
+
+The `.nvimrc` setup includes the following packages:
 - ag.vim
 - deoplete-go
 - deoplete-jedi
@@ -25,8 +44,6 @@ This `rc` setup includes the following packages:
 - vim-qml
 - vim-surround
 
-Location for files is `~/.config/nvim/` , with `~/.config/nvim/init.vim`
-replacing the conventional `~/.vimrc`
 
 Important: NeoVim requires the installation of `xsel` to provide clipboard
 functionality: 

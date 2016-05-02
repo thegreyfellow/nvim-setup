@@ -134,6 +134,7 @@ set ofu=syntaxcomplete#Complete
 "All extension packages for NeoVim through junegunn's Plug
 call plug#begin('~/.nvim/plugged')
 "Plug 'scrooloose/syntastic'
+Plug 'chun-yang/vim-action-ag'
 Plug 'benekastah/neomake'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'digitaltoad/vim-pug'
