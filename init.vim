@@ -33,6 +33,7 @@ set smarttab
 set softtabstop=4
 set nospell
 set tabstop=8
+set termguicolors
 
 
 let NERDTreeToggle=0
@@ -134,6 +135,7 @@ set ofu=syntaxcomplete#Complete
 "All extension packages for NeoVim through junegunn's Plug
 call plug#begin('~/.nvim/plugged')
 "Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
 Plug 'chun-yang/vim-action-ag'
 Plug 'benekastah/neomake'
 Plug 'carlitux/deoplete-ternjs'
