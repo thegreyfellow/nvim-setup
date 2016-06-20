@@ -27,7 +27,7 @@ set scrolloff=12
 set shiftwidth=4
 set showmatch
 set si
-set sidescroll=3
+set sidescroll=5
 set sidescrolloff=10
 set smarttab
 set softtabstop=4
@@ -43,7 +43,7 @@ let g:ackprg = 'ag --vimgrep'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:deoplete#auto_complete_start_length = 1
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 let g:deoplete#sources#go#align_class = 1
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_guide_size = 2
@@ -86,6 +86,11 @@ nnoremap tt :tabedit<Space>
 " Indent guide colors for \ig
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#252525
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#272727
+
+" Indent depths for different file types
+autocmd Filetype *.c, *.h, *.java  set noic cin noexpandtab softtabstop=8 shiftwidth=8
+autocmd Filetype *.yaml, *.yml, *.html set softtabstop=2 tabstop=2 shiftwidth=2
+"autocmd BufRead,BufNewFile 
 
 "Setup for Prose Writing, and configuration
 "   Vim-Pencil
