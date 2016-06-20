@@ -88,8 +88,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#252525
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#272727
 
 " Indent depths for different file types
-autocmd Filetype *.c, *.h, *.java  set noic cin noexpandtab softtabstop=8 shiftwidth=8
-autocmd Filetype *.yaml, *.yml, *.html set softtabstop=2 tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.c, *.h, *.java  set noic cin noexpandtab softtabstop=8 shiftwidth=8
+autocmd BufNewFile,BufRead *.yaml, *.yml, *.html set softtabstop=2 tabstop=2 shiftwidth=2
 "autocmd BufRead,BufNewFile 
 
 "Setup for Prose Writing, and configuration
