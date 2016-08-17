@@ -44,9 +44,30 @@ The `.nvimrc` setup includes the following packages:
 - vim-qml
 - vim-surround
 
+### Setup
 
-Important: NeoVim requires the installation of `xsel` to provide clipboard
-functionality: 
+Getting most of the plugins working requires only running `:PlugInstall`
+when using `nvim` for the first time. However, on Ubuntu 16.04 a few other
+steps need to be taken.
+
+**Deoplete:** Getting IDE-like functionality with autocomplete and suggetions
+with deoplete is quite easy. At the command line install `pip3` and the
+`neovim` python3 package:
+
+```
+$ sudo apt install python3-pip
+$ sudo pip3 install neovim
+```
+
+Once in `nvim`, run `:UpdateRemotePlugins`, restart, and deoplete will be working.
+
+**vim-go:** This is a package that provides a crazy level of functionality for 
+go-lang development. First, make sure your $GOPATH is set; this is requisite for a
+working go-lang setup, so at some point it needs to be done. Usually, it's `/home/$USER/.go/`.
+Once in `nvim`, run `:GoInstallBinaries`, done.
+
+**Cut & Paste:** NeoVim requires the installation of `xsel` to
+provide clipboard functionality: 
 
 ```
 $ sudo apt install xsel 
