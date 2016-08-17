@@ -15,6 +15,7 @@ set nowrap
 set ai
 set autochdir
 set autoread
+set autowrite
 set completeopt+=noinsert
 set completeopt+=noselect
 set expandtab
@@ -43,8 +44,7 @@ let g:ackprg = 'ag --vimgrep'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:deoplete#auto_complete_start_length = 1
-let g:deoplete#enable_at_startup = 0
-let g:deoplete#sources#go#align_class = 1
+let g:deoplete#enable_at_startup = 1
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_guide_size = 2
 let g:indent_guides_start_level = 2
@@ -88,8 +88,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#252525
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#272727
 
 " Indent depths for different file types
-autocmd BufNewFile,BufRead *.c, *.h, *.java  set noic cin noexpandtab softtabstop=8 shiftwidth=8
-autocmd BufNewFile,BufRead *.yaml, *.yml, *.html set softtabstop=2 tabstop=2 shiftwidth=2
+autocmd BufNewFile,FileType *.yaml, *.yml, *.html, *.js set softtabstop=2 tabstop=2 shiftwidth=2
 "autocmd BufRead,BufNewFile 
 
 "Setup for Prose Writing, and configuration
@@ -124,7 +123,6 @@ augroup litecorrect
 augroup END
 "   Goyo.vim
 
-
 "Setting up OmniComplete for various filetypes, and Neomake
 augroup omnifuncs
     autocmd!
@@ -137,6 +135,29 @@ augroup omnifuncs
 augroup end
 set ofu=syntaxcomplete#Complete
 
+"Suggested go-vim shortcuts and autocmds by fatih
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
+let g:go_list_type = "quickfix"
+let g:go_fmt_command = "goimports"
+
+"run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#cmd#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+
+
+
 "All extension packages for NeoVim through junegunn's Plug
 call plug#begin('~/.nvim/plugged')
 "Plug 'scrooloose/syntastic'
@@ -147,6 +168,7 @@ Plug 'carlitux/deoplete-ternjs'
 Plug 'digitaltoad/vim-pug'
 Plug 'ervandew/matchem'
 Plug 'ervandew/supertab'
+Plug 'fatih/vim-go'
 Plug 'fidian/hexmode'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'

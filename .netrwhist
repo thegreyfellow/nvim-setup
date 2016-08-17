@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/andy/Applications/gimp-dev/snap'
-let g:netrw_dirhist_2='/home/andy/Applications/gimp-dev'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/andy/Code/snap/snappy-playpen/ubuntukylin-icon-theme'
+let g:netrw_dirhist_2='/home/andy/Code/snap/snappy-playpen/snap-template'
+let g:netrw_dirhist_3='/home/andy/.config/inkscape'
+let g:netrw_dirhist_4='/home/andy/Code/snap/snappy-playpen/snap-template'
+let g:netrw_dirhist_5='/home/andy/.config/nvim'
+let g:netrw_dirhist_6='/home/andy/Code/snap/snappy-playpen/gimp-git'
+let g:netrw_dirhist_7='/home/andy/Code/snap/snappy-playpen/snap-template'
+let g:netrw_dirhist_8='/home/andy/Code/snap/snapcraft'
+let g:netrw_dirhist_9='/home/andy/Code/snap/snapcraft/snapcraft'
