@@ -33,7 +33,7 @@ set sidescrolloff=10
 set smarttab
 set softtabstop=4
 set nospell
-set tabstop=8
+set tabstop=4
 set termguicolors
 
 
@@ -53,13 +53,11 @@ let g:neomake_html_enabled_makers = ['w3']
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_open_list = 2
 let g:python3_host_skip_check = 1
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_css_checkers = ['csslint']
-"let g:syntastic_html_checkers = ['w3']
-"let g:syntastic_javascript_checkers = ['eslint']
+let g:go_highlight_types=1
+let g:go_highlight_fields=1
+let g:go_highlight_functions=1
+let g:go_highlight_methods=1
+let g:go_highlight_extra_types=1
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 0
 let g:tex_flavour = "context"
@@ -160,11 +158,10 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 "All extension packages for NeoVim through junegunn's Plug
 call plug#begin('~/.nvim/plugged')
-"Plug 'scrooloose/syntastic'
-Plug 'scrooloose/nerdcommenter'
-Plug 'chun-yang/vim-action-ag'
+Plug 'airblade/vim-gitgutter'
 Plug 'benekastah/neomake'
 Plug 'carlitux/deoplete-ternjs'
+Plug 'chun-yang/vim-action-ag'
 Plug 'digitaltoad/vim-pug'
 Plug 'ervandew/matchem'
 Plug 'ervandew/supertab'
@@ -178,6 +175,7 @@ Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-litecorrect'
 Plug 'reedes/vim-pencil'
 Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'shougo/deoplete.nvim'
 Plug 'tpope/vim-surround'
