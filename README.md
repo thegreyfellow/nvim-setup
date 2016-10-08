@@ -22,7 +22,9 @@ $ ~/.local/share/icons/
 ... then set your preferences for opening files accordingly, search for
 NeoVim and add the program to the launcher.
 
-The `.nvimrc` setup includes the following packages:
+![Add Launcher](./launcheradd.gif)
+
+The `init.vim` setup includes the following packages:
 - ag.vim
 - deoplete-go
 - deoplete-jedi
@@ -76,5 +78,5 @@ $ sudo apt install xsel
 which provides copy with `"+y`, and paste with the mouse or `Ctrl+v`, to
 move content between programs like any gui app.
 
-For best use with JavaScript/ES5+, install NodeJS (with nvm or other
-appropriate tool) and use `npm` to install `ternjs` and `eslint` globally.
+**JavaScript/ES5+:** Install NodeJS (with
+and use `npm` to install `ternjs` and `eslint` globally.
