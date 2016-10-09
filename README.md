@@ -72,7 +72,8 @@ Once in `nvim`, run `:GoInstallBinaries`, done.
 provide clipboard functionality: 
 
 ```
-$ sudo apt install xsel ```
+$ sudo apt install xsel 
+```
 
 which provides copy with `"+y`, and paste with the mouse or `Ctrl+v`, to
 move content between programs like any gui app.
