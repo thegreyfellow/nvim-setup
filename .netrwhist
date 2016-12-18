@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/andy/Code/Go/theGoPL'
-let g:netrw_dirhist_2='/home/andy/Code/Go/theGoPL/1'
-let g:netrw_dirhist_3='/home/andy/Code/Go/theGoPL'
-let g:netrw_dirhist_4='/home/andy/Code/Go'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/snap/dosbox-jz/3/usr'
+let g:netrw_dirhist_2='/home/andy/Code/snap/snappy-playpen/imagemagick-edge'
+let g:netrw_dirhist_3='/home/andy/.local/bin'
+let g:netrw_dirhist_4='/home/andy/Code/snap/snappy-playpen/nginx-lihow731/parts/plugins'
+let g:netrw_dirhist_5='/home/andy/Downloads'
+let g:netrw_dirhist_6='/home/andy/.cache/borg/dce8e9e33d97224bf50b2b6b65a2a3527be85ec5720a9cbb867db47c295df669/txn.tmp'
