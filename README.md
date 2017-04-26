@@ -55,12 +55,12 @@ The `init.vim` setup includes the following packages:
 ### Setup
 
 Getting most of the plugins working requires only running `:PlugInstall`
-when using `nvim` for the first time. However, on Ubuntu 16.04 a few other
-steps need to be taken.
+when using `nvim` for the first time. However, a few other steps need to
+be taken to enable all features of this setup.
 
-**Deoplete:** Getting IDE-like functionality with autocomplete and
-suggetions with deoplete is quite easy. At the command line install `pip`
-for both python 2 and 3, and the `neovim` package for each:
+**Deoplete:** Getting autocomplete and suggetions with deoplete is quite
+easy. At the command line install `pip` for both python 2 and 3, and the
+`neovim` package for each:
 
 ```
 $ sudo apt install python-pip python3-pip
