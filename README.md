@@ -29,21 +29,27 @@ The `init.vim` setup includes the following packages:
 - deoplete-go
 - deoplete-jedi
 - deoplete-ternjs
-- deoplete.nvim
-- goyo.vim
+- deoplete
+- goyo
 - hexmode
 - matchem
 - neomake
+- nerdcommenter
 - nerdtree
 - supertab
+- vim-ace
+- vim-action-ag
 - vim-airline
 - vim-easy-align
+- vim-gitgutter
+- vim-go
 - vim-indent-guides
 - vim-lexical
 - vim-litecorrect
 - vim-pencil
 - vim-pug
 - vim-qml
+- vim-startify
 - vim-surround
 
 ### Setup
@@ -82,4 +88,7 @@ move content between programs like any gui app.
 
 **JavaScript/ES5+:** Install NodeJS (with a tool like
 [nvm](https://github.com/creationix/nvm)) and use `npm` to install
-`ternjs` and `eslint` globally.
+`ternjs` and `eslint` globally. Both `tern` and `eslint` require
+configuration before they will work. Included is a very basic
+`.tern-config` file which you can put in your `$HOME` directory for
+a global basic configuration. 
