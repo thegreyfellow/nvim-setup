@@ -1,0 +1,16 @@
+[Desktop Entry]
+X-AppInstall-Package=neovim
+
+Name=NeoVim
+GenericName=Text Editor
+Comment=21st Century Text Editor
+Encoding=UTF-8
+Exec=nvim %F
+TryExec=nvim
+Icon=neovim-mark-128
+StartupNotify=false
+Terminal=true
+Type=Application
+Version=0.1.5-dev
+
+X-Ubuntu-Gettext-Domain=app-install-data
