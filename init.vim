@@ -56,14 +56,21 @@ let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 let g:python3_host_skip_check = 1
 let g:go_auto_type_info = 1
+let g:go_fmt_command = "goimports"
 let g:go_fmt_experimental = 1
 let g:go_gocode_unimported_packages = 1
-let g:go_highlight_types= 1
+let g:go_highlight_chan_whitespace_error = 1
+let g:go_highlight_extra_types= 1
 let g:go_highlight_fields= 1
 let g:go_highlight_functions= 1
+let g:go_highlight_generate_tags = 1
 let g:go_highlight_methods= 1
-let g:go_highlight_extra_types= 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types= 1
+let g:go_list_type = "quickfix"
 let g:go_metalinter_autosave = 1
+let g:go_term_height = 15
+let g:go_term_mode = "split"
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 0
 let g:tern#filetypes = [ 'jsx', '.pug', 'vue', 'js', 'html' ]
@@ -147,8 +154,6 @@ nnoremap <leader>a :cclose<CR>
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
-let g:go_list_type = "quickfix"
-let g:go_fmt_command = "goimports"
 
 "run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
