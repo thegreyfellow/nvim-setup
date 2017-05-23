@@ -45,6 +45,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:deoplete#auto_complete_start_length = 1
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = ['tern#Complete', 'jspc#omni']
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_guide_size = 2
 let g:indent_guides_start_level = 2
@@ -69,11 +71,13 @@ let g:go_highlight_operators = 1
 let g:go_highlight_types= 1
 let g:go_list_type = "quickfix"
 let g:go_metalinter_autosave = 1
-let g:go_term_height = 15
+let g:go_term_height = 8
 let g:go_term_mode = "split"
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 0
-let g:tern#filetypes = [ 'jsx', '.pug', 'vue', 'js', 'html' ]
+let g:tern#filetypes = [ 'jsx', 'pug', 'vue', 'js', 'html' ]
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
 let g:tex_flavour = "context"
 
 
@@ -191,6 +195,7 @@ Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'shougo/deoplete.nvim'
+Plug 'ternjs/tern_for_vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'yosssi/vim-ace'
