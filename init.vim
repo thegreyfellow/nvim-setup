@@ -20,7 +20,7 @@ set completeopt+=noinsert
 set completeopt+=noselect
 set expandtab
 set foldlevel=99
-set foldmethod=indent
+set foldmethod=manual
 set laststatus=2
 set lazyredraw
 set mat=1
@@ -50,6 +50,8 @@ let g:deoplete#omni#functions.javascript = ['tern#Complete', 'jspc#omni']
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_guide_size = 2
 let g:indent_guides_start_level = 2
+let g:js_fmt_autosave = 0
+let g:js_fmt_command = "jsfmt"
 let g:neomake_css_enabled_makers = ['csslint']
 let g:neomake_html_enabled_makers = ['w3']
 let g:neomake_javascript_enabled_makers = ['eslint']
@@ -98,10 +100,6 @@ nnoremap th :tabprev<CR>
 nnoremap tm :tabm<Space>
 nnoremap tn :tabnew<CR>
 nnoremap tt :tabedit<Space>
-
-" Indent guide colors for \ig
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#252525
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#272727
 
 " Indent depths for different file types
 autocmd BufNewFile,FileType *.yaml, *.yml, *.html, *.js set softtabstop=2 tabstop=2 shiftwidth=2
@@ -185,9 +183,11 @@ Plug 'fatih/vim-go'
 Plug 'fidian/hexmode'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'mephux/vim-jsfmt'
 Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'peterhoeg/vim-qml'
+Plug 'posva/vim-vue'
 Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-litecorrect'
 Plug 'reedes/vim-pencil'
