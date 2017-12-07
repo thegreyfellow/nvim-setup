@@ -76,15 +76,16 @@ requisite for a working go-lang setup, so at some point it needs to be
 done. Usually, it's `/home/$USER/.go/`. Once in `nvim`, run
 `:GoInstallBinaries`, done.
 
-**Cut & Paste:** NeoVim requires the installation of `xsel` to provide
+**Cut & Paste:** NeoVim requires the installation of `gpm` to provide
 clipboard functionality:
 
 ```
-$ sudo apt install xsel
+$ sudo apt install gpm
 ```
 
-which provides copy with `"+y`, and paste with the mouse or `Ctrl+v`, to
-move content between programs like any gui app.
+which provides copy of the highlighted content with a left mouse click,
+and will paste from the regular buffer into INSERT mode with a middle
+click.
 
 **JavaScript/ES5+:** Install NodeJS (with a tool like
 [nvm](https://github.com/creationix/nvm)) and use `npm` to install
