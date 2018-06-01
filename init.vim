@@ -78,7 +78,7 @@ let g:go_term_mode = "split"
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 0
 let g:tern#filetypes = [ 'jsx', 'pug', 'vue', 'js', 'html' ]
-let g:tern#command = ["tern"]
+let g:tern#command = ["ternjs"]
 let g:tern#arguments = ["--persistent"]
 let g:tex_flavour = "context"
 
